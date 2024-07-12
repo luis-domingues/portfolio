@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./src/assets/astronaut-suit.png">
+    <img src="./src/assets/astronaut-suit.png" width="255>
 </div>
 
-<h1>Projeto está em desenvolvimento</h1>
+<h1 align="center">Projeto em desenvolvimento</h1>
