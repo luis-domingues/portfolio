@@ -1,42 +1,48 @@
 ---
-import "../styles/global.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-
 interface Props {
-	title?: string;
+    title?: string;
 }
 
 const { title } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		{Astro.site && (
-			<link 
-				rel="alternate"
-				type="application/rss+xml" 
-				title="title of your site rss feed"
-				href={new URL('rss.xml', Astro.site).href}
-			/>
-		)}
-		<script
-			is:inline
-			async
-			crossorigin="anonymous">
-		</script>
-		<link rel="icon" href="/favicon.ico" />
-		<title>{title}</title>
-	</head>
-	<body>
-		<div class="min-h-screen bg-gray-50 text-gray-900 antialiased">
-			<div class="mx-auto min-h-screen w-full max-w-2xl px-6 py-8 sm:px-8 md:py-12 lg:max-w-4xl">
-				<Header />
-				<slot />
-				<Footer />
-			</div>
-		</div>
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        {
+            Astro.site && (
+                <link
+                    rel="alternate"
+                    type="application/rss+xml"
+                    title="title of your site rss feed"
+                    href={new URL("rss.xml", Astro.site).href}
+                />
+            )
+        }
+        <script is:inline async crossorigin="anonymous"></script>
+        <link rel="icon" href="/favicon.ico" />
+        <title>{title}</title>
+    </head>
+    <body class="w-full sm:w-5/6 lg:w-2/3 mx-auto px-4">
+        <header class="flex flex-col items-start py-6 lg:flex-row lg:justify-between lg:items-center">
+            <div class="flex flex-col">
+                <h1 class="font-semibold">Luís Paulo Domingues</h1>
+                <p>Engenheiro de Software</p>
+            </div>
+            <ul>
+                <nav class="flex gap-4 pt-2 text-sm sm:text-base">
+                    <li><a href="#articles.astro" class="hover:border-b">/artigos</a></li>
+                    <li><a href="" class="hover:border-b">/projetos</a></li>
+                </nav>
+            </ul>
+        </header>
+        <slot />
+        <footer class="flex flex-col gap-2 py-6 sm:flex-row sm:justify-between sm:items-center">
+            <a href="">source code</a>
+            <span>built by luis</span>
+        </footer>
+    </body>
+
 </html>
