@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css"
+
 interface Props {
     title?: string;
 }
@@ -27,19 +29,19 @@ const { title } = Astro.props;
     </head>
     <body class="w-full sm:w-5/6 lg:w-2/3 mx-auto px-4">
         <header class="flex flex-col items-start py-6 lg:flex-row lg:justify-between lg:items-center">
-            <div class="flex flex-col">
+            <a href="/" class="flex flex-col">
                 <h1 class="font-semibold">Luís Paulo Domingues</h1>
-                <p>Engenheiro de Software</p>
-            </div>
+                <p class="text-xs">Engenheiro de Software</p>
+            </a>
             <ul>
-                <nav class="flex gap-4 pt-2 text-sm sm:text-base">
-                    <li><a href="#articles.astro" class="hover:border-b">/artigos</a></li>
-                    <li><a href="" class="hover:border-b">/projetos</a></li>
+                <nav class="flex gap-4 mt-2 text-sm sm:text-base">
+                    <li><a href="articles" class="hover:border-b">/artigos</a></li>
+                    <li><a href="projects" class="hover:border-b">/projetos</a></li>
                 </nav>
             </ul>
         </header>
         <slot />
-        <footer class="flex flex-col gap-2 py-6 sm:flex-row sm:justify-between sm:items-center">
+        <footer class="flex flex-col gap-2 py-6 text-sm  sm:flex-row sm:justify-between sm:items-center">
             <a href="">source code</a>
             <span>built by luis</span>
         </footer>
