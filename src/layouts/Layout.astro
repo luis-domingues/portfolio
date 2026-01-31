@@ -25,9 +25,9 @@ const { title } = Astro.props;
         }
         <script is:inline async crossorigin="anonymous"></script>
         <link rel="icon" href="/favicon.ico" />
-        <title>{title}</title>
+        <title>{title ? `${title} | Luís Paulo` : "Luís Paulo Domingues"}</title>
     </head>
-    <body class="w-full sm:w-5/6 lg:w-2/3 mx-auto px-4">
+    <body class="mx-auto max-w-[70ch] px-4 sm:px-6">
         <header class="flex flex-col items-start py-6 lg:flex-row lg:justify-between lg:items-center">
             <a href="/" class="flex flex-col">
                 <h1 class="font-semibold">Luís Paulo Domingues</h1>
@@ -35,14 +35,16 @@ const { title } = Astro.props;
             </a>
             <ul>
                 <nav class="flex gap-4 mt-2 text-sm sm:text-base">
-                    <li><a href="/articles" class="hover:border-b">/artigos</a></li>
-                    <li><a href="/projects" class="hover:border-b">/projetos</a></li>
+                    <li><a href="/articles" class="hover:underline">/ artigos</a></li>
+                    <li><a href="/projects" class="hover:underline">/ projetos</a></li>
                 </nav>
             </ul>
         </header>
-        <slot />
-        <footer class="flex flex-col gap-2 py-6 text-sm  sm:flex-row sm:justify-between sm:items-center">
-            <a href="">source code</a>
+        <main class="py-6">
+            <slot />
+        </main>
+        <footer class="flex flex-col gap-2 py-6 text-sm sm:flex-row sm:justify-between sm:items-center">
+            <a href="" class="hover:underline">source code</a>
             <span>built by luis</span>
         </footer>
     </body>
