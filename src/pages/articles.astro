@@ -1,12 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const articles = await getCollection("articles");
 ---
 
 <Layout>
     <section>
         <h1 class="text-2xl">Artigos</h1>
-        <article class="mt-4">
-            <a href="" class="border border-black p-1">Título teste</a>
-        </article>
+        <ul class="mt-4 space-y-2">
+            {
+                articles.map((article) => (
+                    <li>
+                        <a
+                            href={`/articles/${article.slug}`}
+                            class="border border-black p-2 block"
+                        >
+                            {article.data.title}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
     </section>
 </Layout>
