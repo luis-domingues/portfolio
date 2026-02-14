@@ -1,1 +1,8 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+.prose img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
