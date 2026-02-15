@@ -10,16 +10,28 @@ const articles = await getCollection("articles");
         <h1 class="text-2xl">Artigos</h1>
         <ul class="mt-4 space-y-2">
             {
-                articles.map((article) => (
-                    <li>
-                        <a
-                            href={`/articles/${article.slug}`}
-                            class="border border-black p-2 block"
-                        >
-                            {article.data.title}
-                        </a>
-                    </li>
-                ))
+                articles.map((article) => {
+                    const formattedDate = new Date(article.data.date).toLocaleDateString("pt-BR", {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                    });
+                    return (
+                        <li>
+                            <a
+                                href={`/articles/${article.slug}`}
+                                class="border border-black p-3 flex flex-col sm:flex-row sm:justify-between gap-1"
+                            >
+                                <div>
+                                    {article.data.title}
+                                </div>
+                                <div class="text-sm">
+                                    {formattedDate}
+                                </div>
+                            </a>
+                        </li>
+                    );
+                })
             }
         </ul>
     </section>
