@@ -5,4 +5,8 @@ const articles = defineCollection({
     schema: z.object({title: z.string(), description: z.string(),date: z.date(),}),
 });
 
-export const collections = {articles}
+const projects = defineCollection({
+    schema: z.object({title: z.string(), description: z.string(), github: z.string().url()}),
+});
+
+export const collections = {articles, projects};
