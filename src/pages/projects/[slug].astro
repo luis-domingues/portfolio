@@ -1,0 +1,31 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+    const projects = await getCollection("projects");
+    return projects.map((project) => ({
+        params: {slug: project.slug},
+        props: {project}
+    }));
+}
+
+const {project} = Astro.props;
+const {Content} = await project.render();
+---
+<Layout>
+  <article class="prose prose-neutral prose-lg leading-6 text-justify mx-auto">
+    <h1>{project.data.title}</h1>
+    <Content />
+
+    <div class="mt-6">
+      <a 
+        href={project.data.github}
+        target="_blank"
+        class="border border-black px-3 py-2 inline-block no-underline"
+      >
+        Ver no GitHub
+      </a>
+    </div>
+  </article>
+</Layout>
