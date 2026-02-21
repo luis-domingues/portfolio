@@ -7,7 +7,7 @@ Afinal, como o computador pensa? Já pararam para pensar o quão complexo é o f
 
 Nas aulas de sistemas digitais e arquitetura de computadores, foi-me definido que qualquer sistema computacional visa **transformar estados segundo regras**.
 
-![Processo de modularização das ondas analógicas para blcoos digitais](/public/images/modularization.svg)
+![Processo de modularização das ondas analógicas para blcoos digitais](/images/modularization.svg)
 
 “E o que diabos significa transformar estados segundo regras?”. Bem… fisicamente falando, um estado pode ser uma tensão elétrica, uma posição mecânica de um vetor, uma carga em um capacitor, ou seja, algo não abstrato que faz parte de componentes elétricos e físicos. Esse conceito físico sobre os estados é importante ter em mente, pois é a partir deles que vamos definir os seus funcionamentos. E é aí que a matemática se encaixa, pois ela vai representar um estado físico através de dois valores: 0 e 1, que são valores abstratos e representam níveis lógicos que, no domínio da lógica, são interpretados como **falso** e **verdadeiro**. Ou seja, imagine um circuito que espera receber um sinal de radiofrequência para executar uma determinada função. Caso o sinal seja recebido, ele será modularizado e recepcionado pelo circuito, que executa um comando específico. Ao contrário, nada irá acontecer.
 
@@ -15,7 +15,7 @@ Matematicamente, podemos representar este circuito da seguinte forma: se o estad
 
 Como dito anteriormente, 0 e 1 são valores abstratos, mas que na computação significam dois estados de representação, digamos, “compacta”. Este é um conceito que advém da álgebra booleana, que veio com a proposta de estruturar o formato de conversão de um estado lógico físico ou digital em **dados** através da base binária, que pode ser representada pela expressão log₂(2) = 1, onde o resultado representa 1 bit no sistema que, por sua vez, é composto por um único valor entre 0 e 1 (lembra da proposição “transformar estados segundo regras”? então…).
 
-![Diferença gráfica entre analógico e binário](/public/images/voltage_range.svg)
+![Diferença gráfica entre analógico e binário](/images/voltage_range.svg)
 
 Voltando ao exemplo do circuito, você se perguntou como é que ele executa um comando após receber o sinal de radiofrequência?
 
@@ -25,7 +25,7 @@ Para responder isso, precisamos entender como a base binária converte esses sin
 
 O problema do sistema binário é que, para nós humanos, lermos sequências como 10101100 se tornaria algo não impossível, mas exaustivo, o que levaria ao aumento da quantidade de erros na interpretação dos valores. Diante disso, houve-se a ideia de representar os binários para que sua leitura fosse mais compreensível. Posto que um bit representa uma sequência de caracteres binários, foi-se pensado em uma maneira de abstração para estabelecer uma correspondência direta com o binário, agrupando conjuntos de quatro bits em um único símbolo. Como quatro bits podem representar exatamente dezesseis combinações distintas, cada dígito hexadecimal mapeia um padrão binário específico. Sendo assim, uma sequência extensa de bits pode ser representada de forma compacta, o que, segundo o teorema geral da numeração posicional equivale ao número em base 16, já que com quatro bits podemos representar exatamente dezesseis combinações distintas. Na prática, um valor hexadecimal interpreta visualmente os padrões dos binários que por sua vez representam estados elétricos no hardware. Cada dígito hexadecimal corresponde a quatro decisões físicas simultâneas, tomadas por transistores que realizam a condução ou o bloqueio das cargas elétricas. E é aí que o hexadecimal traduz esse estado elétrico, sendo possível compreender melhor as operações de registradores ou o endereçamento de memória, por exemplo. Ainda assim, ressalto que toda lógica matemática realizada pelo computador ocorre exclusivamente no domínio binário.
 
-![Bit Hexadecimal](/public/images/bit_hexadecimal.svg)
+![Bit Hexadecimal](/images/bit_hexadecimal.svg)
 
 Contudo, para que essa lógica binária exista no mundo físico, é necessário um elemento capaz de assumir um comportamento extremamente rápido, capaz de permitir ou bloquear a passagem de corrente elétrica. Esse papel é desempenhado pelo **transistor**. Quando esse transistor conduz corrente, o circuito interpreta esse estado como um nível lógico alto; quando não conduz, o estado é interpretado como um nível lógico baixo.
 
